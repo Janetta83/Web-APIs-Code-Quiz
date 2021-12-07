@@ -77,12 +77,23 @@ function generateQuizQuestion() {
         return showScore();
     }
     var currentQuestion = quizQuestions[currentQuestionIndex];
-    questionE1.innerHTML = "<p>" + currentQuestion + "</p>";
+    questionE1.innerHTML = "<p>" + currentQuestion.question + "</p>";
     buttonA.innerHTML = currentQuestion.choiceA;
     buttonB.innerHTML = currentQuestion.choiceB;
     buttonC.innerHTML = currentQuestion.choiceC;
     buttonD.innerHTML = currentQuestion.choiceD;
 };
+
+// function for check answer
+function checkAnswer(userAnswer) {
+    var correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
+    if (correctAnswer === userAnswer) {
+        console.log("correct")
+
+        
+    }
+    else {console.log("false")}
+}
 
 //Start Quiz
 function startQuiz() {
@@ -123,5 +134,8 @@ submitScoreBtn.addEventListener("click", function highscore() {
 
     }
 })
+
+// start quiz button
+startQuizButton.addEventListener("click", startQuiz)
 
 
